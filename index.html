@@ -44,7 +44,7 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <button><a class=" bg-[#facc15] rounded-3xl  text-white px-5 py-2">Plant a Tree</a></button>
+                    <button><a class=" bg-[#facc15] rounded-3xl  text-[#15803d] px-5 py-2">Plant a Tree</a></button>
                 </div>
             </div>
         </nav>
@@ -74,7 +74,33 @@
 
     </header>
     <main>
-        <section></section>
+        <!-- section-choose your tree -->
+        <section class="w-full py-20  bg-[#f0fdf4]">
+            <h2 class="text-[#1f2937] font-bold text-[30px] text-center pb-5">Choose Your Trees</h2>
+            <div class="w-11/12 mx-auto flex justify-normal gap-5">
+                <aside class="catagories w-2/12 ">
+                    <h3 class="font-bold text-lg pb-5">Categories</h3>
+                    <ul id="categoriesContainer" >
+                        <li id="all-trees" class="w-full rounded-sm hover:bg-[#15803d] hover:text-white p-2">All Trees</li>
+                        
+                    </ul>
+
+                </aside>
+        <!-- Items-container -->
+                <div id="plantsContainer" class="item-container w-8/12 grid grid-cols-3 gap-5 text-center">
+                    
+                    
+                    
+                </div>
+                <aside class="cart w-2/12">
+                    <h3 class="font-bold text-lg text-center bg-white">Your Cart</h3>
+
+                </aside>
+
+            </div>
+
+
+        </section>
 
     <!-- section-campaign -->
 
@@ -143,12 +169,7 @@
         </section>
     </footer>
 
-   
-
-
-
-
     </main>
-    
+    <script src="./script/index.js"></script>
 </body>
 </html>
