@@ -2,6 +2,48 @@
 const categoriesContainer = document.getElementById('categoriesContainer')
 const plantsContainer = document.getElementById('plantsContainer')
 
+const loadAllPlants = () =>{
+    fetch("https://openapi.programming-hero.com/api/plants")
+     .then((res) => res.json())
+     .then((data) => {
+        // console.log(data)
+        const allPlants = data.plants
+        console.log(allPlants)
+
+        // showAllPlants(allPlants)
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+};
+loadAllPlants()
+// const showAllPlants = (plants) => {
+//     console.log(plants)
+//     plantsContainer.innerHTML = ""
+//     plants.forEach(plant => {
+//         plantsContainer.innerHTML += `
+//         <div class="bg-white p-4 rounded-lg">
+//                         <div class="w-full h-48 overflow-hidden rounded-xl">
+//                         <img src="${plant.image}" alt="" class="w-full h-full object-cover mt-1">
+//                         </div>
+//                         <div><h2 class="font-semibold py-1">${plant.name}</h2> </div>
+//                         <p class="text-sm text-gray-600 pb-2">${plant.description}</p>
+//                         <div class="flex justify-between">
+//                             <span class="  text-[12px] bg-green-200 text-green-800 px-2 py-1 rounded-lg">${plant.category}</span>
+//                             <span class="font-semibold">৳${plant.price}</span>
+//                         </div>
+//                         <button class=" bg-[#15803d] rounded-3xl  text-white px-5 py-2 w-full my-5 ">Add to Cart</button>
+
+                    
+//                     </div>
+
+//         `
+
+//     })
+    
+// }
+
 
 const loadCategory = () =>{
     fetch("https://openapi.programming-hero.com/api/categories")
@@ -50,18 +92,20 @@ const loadPlantsByCategory =(categoryId) =>{
 }
 const showPlantsByCategory = (plants) => {
     console.log(plants)
-    // plantsContainer.innerHTML = ""
+    plantsContainer.innerHTML = ""
     plants.forEach(plant => {
         plantsContainer.innerHTML += `
-        <div class="bg-white p-2 gap-y-2">
-                        <div><img src="${plant.image}" alt=""></div>
-                        <div><h2 class="font-bold">${plant.name}</h2> </div>
-                        <div><p>${plant.description}</p></div>
-                        <div>
-                            <div><span>${plant.category}</span></div>
-                            <div>৳<span>${plant.price}</span></div>
+        <div class="bg-white p-4 rounded-lg">
+                        <div class="w-full h-48 overflow-hidden rounded-xl">
+                        <img src="${plant.image}" alt="" class="w-full h-full object-cover mt-1">
                         </div>
-                        <button><a class=" bg-[#15803d] rounded-3xl  text-white px-5 py-2 ">Add to Cart</a></button>
+                        <div><h2 class="font-semibold py-1">${plant.name}</h2> </div>
+                        <p class="text-sm text-gray-600 pb-2">${plant.description}</p>
+                        <div class="flex justify-between">
+                            <span class="  text-[12px] bg-green-200 text-green-800 px-2 py-1 rounded-lg">${plant.category}</span>
+                            <span class="font-semibold">৳${plant.price}</span>
+                        </div>
+                        <button class=" bg-[#15803d] rounded-3xl  text-white px-5 py-2 w-full my-5 ">Add to Cart</button>
 
                     
                     </div>
