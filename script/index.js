@@ -19,7 +19,11 @@ const loadAllPlants = () => {
                                 <div class="w-full h-48 overflow-hidden rounded-xl">
                                     <img src="${plant.image}" alt="${plant.name}" class="w-full h-full object-cover">
                                 </div>
-                                <h2 class="font-semibold py-2">${plant.name}</h2>
+                                <h2 
+                                onclick="openPlantModal('${plant.name}', '${plant.image}', '${plant.description}', '${plant.category}', ${plant.price})"
+                                class="font-semibold py-2 cursor-pointer hover:underline">
+                                ${plant.name}
+                                </h2>
                                 <p class="text-sm text-gray-600 pb-2">${plant.description}</p>
                                 <div class="flex justify-between items-center mb-3">
                                     <span class="text-[12px] bg-green-200 text-green-800 px-2 py-1 rounded-lg">${plant.category}</span>
@@ -96,7 +100,11 @@ const showPlantsByCategory = (plants) => {
                         <div class="w-full h-48 overflow-hidden rounded-xl">
                         <img src="${plant.image}" alt="" class="w-full h-full object-cover mt-1">
                         </div>
-                        <div><h2 class="font-semibold py-1">${plant.name}</h2> </div>
+                        <div><h2 
+                        onclick="openPlantModal('${plant.name}', '${plant.image}', '${plant.description}', '${plant.category}', ${plant.price})"
+                        class="font-semibold py-2 cursor-pointer hover:underline">
+                        ${plant.name}
+                        </h2></div>
                         <p class="text-sm text-gray-600 pb-2">${plant.description}</p>
                         <div class="flex justify-between">
                             <span class="  text-[12px] bg-green-200 text-green-800 px-2 py-1 rounded-lg">${plant.category}</span>
@@ -112,6 +120,17 @@ const showPlantsByCategory = (plants) => {
     })
     
 }
+
+const openPlantModal = (name, image, description, category, price) => {
+  document.getElementById("modalImage").src = image;
+  document.getElementById("modalTitle").innerText = name;
+  document.getElementById("modalDetails").innerText = description;
+  document.getElementById("modalCategory").innerText = category;
+  document.getElementById("modalPrice").innerText = `৳${price}`;
+  
+  my_modal_5.showModal();
+};
+
 
 loadCategory()
 allPlantsBtn.addEventListener("click", () => {

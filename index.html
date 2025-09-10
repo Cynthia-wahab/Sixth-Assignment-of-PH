@@ -77,7 +77,7 @@
         <!-- section-choose your tree -->
         <section class="w-full py-20  bg-[#f0fdf4]">
             <h2 class="text-[#1f2937] font-bold text-[30px] text-center pb-5">Choose Your Trees</h2>
-            <div class="w-11/12 mx-auto flex justify-normal gap-5">
+            <div class="w-11/12 mx-auto flex flex-col md:flex-row justify-normal gap-5">
                 <aside class="catagories w-2/12 ">
                     <h3 class="font-bold text-lg pb-5">Categories</h3>
                     <ul id="categoriesContainer" >
@@ -171,10 +171,29 @@
                 </aside>
                 </div>
 
-
         </section>
     </footer>
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            
+            <img id="modalImage" class="w-full h-60 object-cover rounded mb-3" />
+            <h3 id="modalTitle" class="text-lg text-green-800 font-bold mb-2"></h3>
+            <p id="modalDetails" class="text-gray-600 mb-3"></p>
+            <div class="flex justify-between items-center">
+            <span id="modalCategory" class="text-sm bg-green-200 text-green-800 px-2 py-1 rounded-lg"></span>
+            <span id="modalPrice" class="font-semibold text-lg"></span>
+            </div>
+            <div class="modal-action">
+            <form method="dialog">
+                <button class="btn rounded-2xl">Close</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
 
+
+    
     </main>
     <script src="./script/index.js"></script>
 </body>
